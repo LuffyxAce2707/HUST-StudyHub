@@ -1,0 +1,51 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor Guest
+actor Student
+actor Admin
+
+rectangle "HUST StudyHub" {
+
+    usecase "Register / Login" as UC1
+    usecase "View Courses" as UC2
+    usecase "View Posts" as UC3
+    usecase "View Materials" as UC4
+    usecase "View Reviews" as UC5
+
+    usecase "Manage Profile" as UC6
+    usecase "Manage Posts" as UC7
+    usecase "Comment on Posts" as UC8
+    usecase "Share Materials" as UC9
+    usecase "Submit Anonymous Review" as UC10
+    usecase "Report Content" as UC11
+
+    usecase "Manage Users" as UC12
+    usecase "Manage Courses" as UC13
+    usecase "Moderate Content" as UC14
+}
+
+Guest --> UC1
+Guest --> UC2
+Guest --> UC3
+Guest --> UC4
+Guest --> UC5
+
+Student --> UC6
+Student --> UC7
+Student --> UC8
+Student --> UC9
+Student --> UC10
+Student --> UC11
+Student --> UC2
+Student --> UC3
+Student --> UC4
+Student --> UC5
+
+Admin --> UC12
+Admin --> UC13
+Admin --> UC14
+
+@enduml
